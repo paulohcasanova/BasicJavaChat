@@ -64,7 +64,7 @@ public class Client extends JFrame implements ActionListener, KeyListener{
 	     setContentPane(pnlContent);
 	     setLocationRelativeTo(null);
 	     setResizable(false);
-	     setSize(300,300);
+	     setSize(250,300);
 	     setVisible(true);
 	     setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
