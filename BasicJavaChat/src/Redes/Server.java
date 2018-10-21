@@ -72,7 +72,7 @@ public class Server extends Thread{
 		}
 	}
 	/*
-	 * main
+	 * main 
 	 */
 	public static void main(String[] args) {
 		try{

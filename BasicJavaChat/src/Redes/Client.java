@@ -84,7 +84,7 @@ public class Client extends JFrame implements ActionListener, KeyListener{
 		bfw.flush();
 	}
 	/*
-	 * Metodo de envio de mensagem
+	 * Metodo de envio de mensagem 
 	 */
 	public void sendMessage(String msg) throws IOException{
 		if(msg.equals("Sair")) {
