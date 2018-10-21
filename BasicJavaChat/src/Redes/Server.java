@@ -34,7 +34,9 @@ public class Server extends Thread{
 		}
 	}
 	/*
-	 * 
+	 * Metodo para 
+	 * a) adicionar clientes em uma lista para notificar todos conectados das mensagens
+	 * b) repassar as mensagens para os clientes conectados
 	 */
 	@Override
 	public void run() {
@@ -57,7 +59,7 @@ public class Server extends Thread{
 		}
 	}
 	/*
-	 * 
+	 * Método para envio
 	 */
 	public void sendToAll(BufferedWriter bwOut, String msg) throws IOException{
 		BufferedWriter bwS;
@@ -69,7 +71,9 @@ public class Server extends Thread{
 			}
 		}
 	}
-	
+	/*
+	 * main
+	 */
 	public static void main(String[] args) {
 		try{
 		    JLabel lblMessage = new JLabel("Porta do Servidor:");

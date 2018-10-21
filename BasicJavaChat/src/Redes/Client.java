@@ -27,6 +27,9 @@ public class Client extends JFrame implements ActionListener, KeyListener{
 	private JTextField txtPort;
 	private JTextField txtName;
 	
+	/*
+	 * construtor 
+	 */
 	public Client() throws IOException{
 		JLabel lblMessage = new JLabel("Verificar");
 		txtIP = new JTextField("127.0.0.1");
@@ -69,7 +72,9 @@ public class Client extends JFrame implements ActionListener, KeyListener{
 	     setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 	}
-	
+	/*
+	 * Metodo para conectar
+	 */
 	public void connect() throws IOException{
 		socket = new Socket(txtIP.getText(), Integer.parseInt(txtPort.getText()));
 		ou = socket.getOutputStream();
@@ -78,7 +83,9 @@ public class Client extends JFrame implements ActionListener, KeyListener{
 		bfw.write(txtName.getText() + "\r\n");;
 		bfw.flush();
 	}
-	
+	/*
+	 * Metodo de envio de mensagem
+	 */
 	public void sendMessage(String msg) throws IOException{
 		if(msg.equals("Sair")) {
 			bfw.write("Desconectando\r\n");
@@ -91,7 +98,9 @@ public class Client extends JFrame implements ActionListener, KeyListener{
 		bfw.flush();
 		txtMsg.setText("");
 	}
-	
+	/*
+	 * Método para (escutar) atualizações de mensagens
+	 */
 	public void listen() throws IOException{
 		InputStream in = socket.getInputStream();
 		InputStreamReader inr = new InputStreamReader(in);
@@ -110,6 +119,9 @@ public class Client extends JFrame implements ActionListener, KeyListener{
 			}
 		}
 	}
+	/*
+	 * Desconectar do servidor
+	 */
 	public void disconnect() throws IOException{
 		sendMessage("Sair");
 		this.bfw.close();
